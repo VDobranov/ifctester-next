@@ -76,7 +76,8 @@ async function initEnvironment() {
     await pyodide.loadPackage("shapely");
 
     // Install IfcTester
-    await micropip.install('ifctester');
+    // await micropip.install('ifctester');
+    await micropip.install(config.wasm.ifctester_url);
 
     // Initialize IDS and API
     await API.init(pyodide);
